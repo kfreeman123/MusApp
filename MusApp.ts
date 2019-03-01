@@ -157,6 +157,18 @@ class Sequence {
         });
     }
 
+    display () {
+        var disp = "";
+        this.val.forEach(note => {
+            disp = disp + note.display();
+        });
+        return disp;
+    }
+
+    reset() {
+        this.val = [];
+    }
+
 }
 
 class Note {
@@ -288,21 +300,12 @@ class Note {
         console.log("(" + this.pitchDisplay() + ")(" + this.durationDisplay() + ")");
     }
 
+    display () {
+        return "(" + this.pitchDisplay() + ")(" + this.durationDisplay() + ")";
+    }
+
     transpose (offset) {
         this.pitch = this.pitch + offset;
     }
 
 }
-
-(function Test(){
-
-    let s1 = new Sequence("C# Minor - Root Position", keyValue.CS);
-    s1.add_triad_m3(pitchValueSharp.CS1, durationValue.Quarter);
-    s1.print();
-
-    let s2 = s1;
-    s2.name = "C# Minor - First Inversion";
-    s2.invert()
-    s2.print();
-       
-})();

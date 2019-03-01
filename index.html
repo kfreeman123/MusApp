@@ -5,10 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="jquery.js"></script>
+    <!-- <script src="jquery.js"></script> -->
+    <style>
+
+        * {
+            font-family:'Courier New', Courier, monospace;
+            font-size: small;
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
     <script src="MusApp.js"></script>
+    <script>
+
+        function Refresh() {
+            $("#output").html(s1.display());
+        }
+
+        function Reset() {
+            s1.reset();
+            Refresh();
+        }
+
+        let s1 = new Sequence("Ken's Test Sequence", keyValue.CN);
+
+        $(document).ready(function(){
+
+            $("#1").click(function(){
+                s1.add(1, 4);
+                Refresh();
+            });
+
+            $("#2").click(function(){
+                s1.add(2, 4);
+                Refresh();
+            });
+
+            $("#3").click(function(){
+                s1.add(3, 4);
+                Refresh();
+            });
+
+            $("#Refresh").click(function(){
+                Refresh();
+            });
+
+            $("#Reset").click(function(){
+                Reset();
+            });
+        });
+
+    </script>
+
 </head>
 <body>
+
+    <div id="output"></div><br />
+    <button id="Refresh">Refresh</button>
+    <button id="Reset">Reset</button><br /><br />
+    <button id="1">A#</button>
+    <button id="2">B</button>
+    <button id="3">C</button>
     
 </body>
 </html>
