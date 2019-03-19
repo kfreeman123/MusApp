@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Music App</title>
     <style>
 
-        * {
-            font-family:'Courier New', Courier, monospace;
-            font-size: small;
+        .item1 { grid-area: header; }
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: right; }
+        .item5 { grid-area: footer; }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
         }
 
-        #drawing {
-            position: absolute;
-            border: black solid 2px;
-            left: 200px;
-            width: 200px;
-            height: 200px;
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
         }
+
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        button {
+            left: 5%;
+            width: 90%;
+            height: 40px;
+            font-size: medium;
+        }
+
 
     </style>
     <script src="jquery.js"></script>
@@ -68,27 +91,35 @@
 </head>
 <body>
 
-    <div id="output"></div><br />
-    <button id="Refresh">Refresh</button>
-    <button id="Reset">Reset</button><br /><br />
-    <button id="1">A#</button>
-    <button id="2">B</button>
-    <button id="3">C</button>
+    <div class="grid-container">
+        <div class="item1">Music App</div>
+        <div class="item2">
+            
+            <div id="output"></div> 
+            <button id="Refresh">Refresh</button>
+            <button id="Reset">Reset</button>
+            <button id="1">A#</button>
+            <button id="2">B</button>
+            <button id="3">C</button>
 
-    <div id="drawing">
+        </div>
+        <div class="item3">
 
-        <svg height="100" width="100">
-            <g 
-            transform="rotate(-10 55 102)">
-            <ellipse cx="50" cy="50" rx="10" ry="7" style="fill:black;stroke:black;stroke-width:2" />
-            </g>
-            <line x1="50" y1="5" x2="50" y2="50" style="stroke:black;stroke-width:4" />
-        </svg>
-
-        <!-- <svg height="210" width="500">
-            <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
-        </svg> -->
-
+            <svg height="100" width="100">
+                <g 
+                transform="rotate(-10 55 102)">
+                <ellipse cx="50" cy="50" rx="10" ry="7" style="fill:black;stroke:black;stroke-width:2" />
+                </g>
+                <line x1="50" y1="5" x2="50" y2="50" style="stroke:black;stroke-width:4" />
+            </svg>
+    
+            <!-- <svg height="210" width="500">
+                <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+            </svg> -->
+    
+        </div>  
+        <div class="item4">Right</div>
+        <div class="item5">Footer</div>
     </div>
     
 </body>
