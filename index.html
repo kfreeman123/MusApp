@@ -7,21 +7,22 @@
     <title>Music App</title>
     <style>
 
-        .item1 { grid-area: header; }
-        .item2 { grid-area: menu; }
-        .item3 { grid-area: main; }
-        .item4 { grid-area: right; }
-        .item5 { grid-area: footer; }
+        .areaHeader { grid-area: header; }
+        .areaLeft { grid-area: left; }
+        .areaMain { grid-area: main; }
+        .areaRight { grid-area: right; }
+        .areaFooter { grid-area: footer; }
 
         .grid-container {
             display: grid;
             grid-template-areas:
                 'header header header header header header'
-                'menu main main main right right'
-                'menu footer footer footer footer footer';
-            grid-gap: 10px;
-            background-color: #2196F3;
+                'left main main main main right'
+                'left footer footer footer footer right';
+            grid-gap: 20px;
+            /* background-color: #2196F3; */
             padding: 10px;
+            border: black solid 1px;
         }
 
         .grid-container > div {
@@ -29,17 +30,49 @@
             text-align: center;
             padding: 20px 0;
             font-size: 30px;
+            border: black solid 1px;
+        }
+
+        .grid-container > .areaHeader {
+            background-color: Black;
+        }
+
+        .grid-container > .areaMain {
+            border: #E2E5E9 solid 1px;
+        }
+
+        .grid-container > .areaLeft, .grid-container > .areaRight {
+            background-color: #71818B;
         }
 
         * {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: White;
         }
 
         button {
             left: 5%;
-            width: 90%;
+            width: 100px;
             height: 40px;
             font-size: medium;
+        }
+
+        .staff {
+            /* border-image-repeat: repeat-x; */
+            width: 100%;
+            height: 170px;
+        }
+
+        .node {
+            border: black solid 1px;
+            width: 40px;
+            height: 20px;
+        }
+
+        .pianoKey {
+            border: black solid 1px;
+            width: 20px;
+            height: 80px;
         }
 
 
@@ -92,34 +125,282 @@
 <body>
 
     <div class="grid-container">
-        <div class="item1">Music App</div>
-        <div class="item2">
+        <div class="areaHeader">Music App</div>
+        <div class="areaLeft">
             
-            <div id="output"></div> 
-            <button id="Refresh">Refresh</button>
-            <button id="Reset">Reset</button>
-            <button id="1">A#</button>
-            <button id="2">B</button>
-            <button id="3">C</button>
+            <!-- <button id="Refresh">Refresh</button><br />
+            <button id="Reset">Reset</button><br />
+            <button id="1">A#</button><br />
+            <button id="2">B</button><br />
+            <button id="3">C</button> -->
+
+            Left
+            <table>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+            </table>
 
         </div>
-        <div class="item3">
+        <div class="areaMain">
 
-            <svg height="100" width="100">
-                <g 
-                transform="rotate(-10 55 102)">
-                <ellipse cx="50" cy="50" rx="10" ry="7" style="fill:black;stroke:black;stroke-width:2" />
-                </g>
-                <line x1="50" y1="5" x2="50" y2="50" style="stroke:black;stroke-width:4" />
-            </svg>
-    
-            <!-- <svg height="210" width="500">
-                <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
-            </svg> -->
+            <div style="padding: 20px 20px 20px 20px; background-color: #F0EAD6;">
+
+                <!-- <div id="output"></div> -->
+
+                <!-- <svg height="100" width="100">
+                    <g 
+                    transform="rotate(-10 55 102)">
+                    <ellipse cx="50" cy="50" rx="10" ry="7" style="fill:black;stroke:black;stroke-width:2" />
+                    </g>
+                    <line x1="50" y1="5" x2="50" y2="50" style="stroke:black;stroke-width:4" />
+                </svg> -->
+        
+                <!-- <svg height="210" width="500">
+                    <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+                </svg> -->
+
+                <img class="staff" src="./Staff.png" alt="">
+
+                <!-- <svg height="100" width="100" style="position: relative; left: -45%; top: -128px;">
+                    <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" />
+                </svg> -->
+
+            </div>
     
         </div>  
-        <div class="item4">Right</div>
-        <div class="item5">Footer</div>
+        <div class="areaRight">
+
+                Right
+                <table>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                        <td>
+                            <div class="node"></div>
+                        </td>
+                    </tr>
+                </table>
+
+        </div>
+        <div class="areaFooter">
+
+            <table>
+                <tr>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                    <td>
+                        <div class="pianoKey"></div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
     </div>
     
 </body>
